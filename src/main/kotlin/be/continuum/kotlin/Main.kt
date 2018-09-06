@@ -1,6 +1,6 @@
-package be.continuum
+package be.continuum.kotlin
 
-class KotlinMain {
+class Main {
 
     fun main(args: Array<String>) {
         if (args.isEmpty()) {
