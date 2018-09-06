@@ -29,4 +29,16 @@ public class UserTest {
         return new User("John", "Doe");
     }
 
+    @Test
+    public void createKotlinUser() {
+        KotlinUser user = new KotlinUser("John", "Doe");
+        user.setAge(30);
+
+        assertThat(user.getSurname(), equalTo("John"));
+        assertThat(user.getName(), equalTo("Doe"));
+        assertThat(user.getAge(), equalTo(30));
+
+        assertThat(user.toString(), equalTo("KotlinUser(surname=John, name=Doe)"));
+    }
+
 }

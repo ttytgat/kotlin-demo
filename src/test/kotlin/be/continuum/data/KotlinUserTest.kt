@@ -1,20 +1,20 @@
-package be.continuum.kotlin.data
+package be.continuum.data
 
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.CoreMatchers.nullValue
 import org.junit.Assert.assertThat
 import org.junit.Test
 
-class UserTest {
+class KotlinUserTest {
 
     @Test
     fun createUser() {
-        val user = User(name = "Doe", surname = "John")
+        val user = KotlinUser(name = "Doe", surname = "John")
 
         assertThat(user.surname, equalTo("John"))
         assertThat(user.name, equalTo("Doe"))
         assertThat(user.age, nullValue())
-        assertThat(user.toString(), equalTo("User(surname=John, name=Doe)"))
+        assertThat(user.toString(), equalTo("KotlinUser(surname=John, name=Doe)"))
     }
 
     @Test
@@ -24,12 +24,12 @@ class UserTest {
 
         assertThat(user.getFullName(), equalTo("John Doe"))
         assertThat(user.age, equalTo(30))
-        assertThat(user.toString(), equalTo("User(surname=John, name=Doe)"))
+        assertThat(user.toString(), equalTo("KotlinUser(surname=John, name=Doe)"))
     }
 
-    private fun createJohnDoeUser() = User("John", "Doe")
+    private fun createJohnDoeUser() = KotlinUser("John", "Doe")
 
-    private fun User.getFullName(): String {
+    private fun KotlinUser.getFullName(): String {
         return surname + name
     }
 
@@ -53,6 +53,16 @@ class UserTest {
 
         assertThat(surname, equalTo("John"))
         assertThat(name, equalTo("Doe"))
+    }
+
+    @Test
+    fun createJavaUser() {
+        val user = User("John", "DOe")
+        user.age = 30
+
+        assertThat(user.surname, equalTo("John"))
+        assertThat(user.name, equalTo("Doe"))
+        assertThat(user.age, equalTo(30))
     }
 
 }
