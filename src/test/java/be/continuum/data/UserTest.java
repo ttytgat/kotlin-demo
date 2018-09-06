@@ -19,10 +19,14 @@ public class UserTest {
 
     @Test
     public void createUserWithAge() {
-        User user = new User("John", "Doe");
+        User user = createJohnDoeUser();
         user.setAge(30);
 
         assertThat(user.getAge(), equalTo(30));
+    }
+
+    private User createJohnDoeUser() {
+        return new User("John", "Doe");
     }
 
 }
