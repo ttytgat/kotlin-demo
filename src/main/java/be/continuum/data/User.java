@@ -6,6 +6,7 @@ public class User {
     private final String name;
 
     private Integer age;
+    private Address address;
 
     public User(final String surname, final String name) {
         this.surname = surname;
@@ -28,4 +29,11 @@ public class User {
         this.age = age;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 }
