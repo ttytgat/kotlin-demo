@@ -8,7 +8,9 @@ public class Main {
 
     public static void main(final String[] args) {
 
-        User user = new User("Jan", "Dockx");
+        User user = new User();
+        user.setSurname("Jan");
+        user.setName("Dockx");
         Address address = new Address();
         address.setNumber(100);
         user.setAddress(address);

@@ -10,7 +10,9 @@ public class UserTest {
 
     @Test
     public void createUser() {
-        User user = new User("John", "Doe");
+        User user = new User();
+        user.setSurname("John");
+        user.setName("Doe");
 
         assertThat(user.getSurname(), equalTo("John"));
         assertThat(user.getName(), equalTo("Doe"));
@@ -26,12 +28,17 @@ public class UserTest {
     }
 
     private User createJohnDoeUser() {
-        return new User("John", "Doe");
+        User user = new User();
+        user.setSurname("John");
+        user.setName("Doe");
+        return user;
     }
 
     @Test
     public void createKotlinUser() {
-        KotlinUser user = new KotlinUser("John", "Doe");
+        KotlinUser user = new KotlinUser();
+        user.setSurname("John");
+        user.setName("Doe");
         user.setAge(30);
 
         assertThat(user.getSurname(), equalTo("John"));
